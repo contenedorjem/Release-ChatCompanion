@@ -1,0 +1,34 @@
+ion-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.logo-container {
+  margin-top: 50px;
+  flex: 1; /* Ocupa 1/3 del espacio disponible verticalmente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  background-color: var(--ion-color-success);
+  border-radius: 50%; /* Hace que la div sea un círculo */
+  width: 200px; /* Ancho del círculo */
+  height: 200px; /* Altura del círculo */
+}
+.login-container {
+  width: 95%;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-buttons {
+  flex: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}

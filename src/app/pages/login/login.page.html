@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-text color="success">
+      <h5 style="text-align: center; font-size: small;">INICIAR SESIÓN</h5>
+    </ion-text>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="logo-container">
+    <div class="logo">
+      <img src="assets/alien.svg" class="logo" />
+
+    </div> <!-- Círculo verde -->
+  </div>
+
+  <div class="login-container">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Correo electrónico</ion-label>
+        <ion-input [(ngModel)]="email" type="email" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input [(ngModel)]="password" type="password" required></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button color="success" expand="block" (click)="login()">Iniciar sesión</ion-button>
+  </div>
+  <!--
+    <div class="login-container">
+      <ion-button color="success" expand="block" (click)="biometricLogin()">Iniciar sesión con huella dactilar</ion-button>
+    </div>
+  -->
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <div class="footer-buttons">
+      <ion-button color="secondary" expand="block" fill="clear" routerLink="/register">Registrar usuario</ion-button>
+      <ion-button color="warning" expand="block" fill="clear" routerLink="/password-reset">¿Olvidaste tu
+        contraseña?</ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>

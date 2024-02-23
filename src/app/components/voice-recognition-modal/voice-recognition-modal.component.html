@@ -1,0 +1,43 @@
+<!-- En tu archivo de plantilla HTML -->
+<ion-backdrop visible="true" tappable="false"></ion-backdrop>
+<div class="loader">
+  <div class="face face1">
+    <div class="circle"></div>
+  </div>
+  <div class="face face2">
+    <div class="circle"></div>
+  </div>
+</div>
+<div class="loader">
+  <div class="face face1">
+      <div class="circle"></div>
+  </div>
+  <div class="face face2">
+      <div class="circle"></div>
+  </div>
+</div>
+<img src="assets/alienY.svg" class="logo" />
+
+<div class="voice-recognition-ui">
+  <!-- Botón para iniciar la escucha -->
+  <ion-button (click)="startListening()" color="warning" *ngIf="!isListening">
+    <ion-icon name="mic-outline" slot="start"></ion-icon>
+    Iniciar Escucha
+  </ion-button>
+
+  <!-- Botón para detener la escucha -->
+  <ion-button (click)="stopListening()" color="warning" *ngIf="isListening">
+    <ion-icon name="mic-off-outline" slot="start"></ion-icon>
+    Detener Escucha
+  </ion-button>
+
+  <!-- Texto reconocido mostrado aquí -->
+  <div class="transcript-area">
+    <p color ="warning">{{ transcript}}</p>
+  </div>
+
+  <!-- Botón para enviar el texto reconocido, siempre visible -->
+  <ion-button (click)="sendTranscript()" color="warning">
+    Enviar
+  </ion-button>
+</div>

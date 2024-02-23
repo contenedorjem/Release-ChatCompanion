@@ -1,0 +1,66 @@
+.chat-item{
+  --padding-top: 5px;
+  --padding-bottom: 5px;
+  &.bot{
+    --background: transparent;
+  }
+}
+.text-box-item{
+  --border-radius:25px;
+  --background: var(--ion-color-light);
+}
+
+.chat-icon{
+  font-size:20px;
+}
+
+ion-badge{
+  padding: 10px;
+}
+
+.button-solid {
+  --background: var(--ion-color-light);
+  --color: var(--ion-color-primary-contrast, #fff);
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+}
+
+.mic-button {
+  margin-right: 8px; /* Ajusta según sea necesario */
+}
+
+.text-box-item {
+  flex-grow: 1;
+}
+
+.send-button {
+  margin-left: 8px; /* Ajusta según sea necesario */
+}
+
+.swal2-container {
+  z-index: 99999 !important;
+}
+
+.page-content {
+  background: var(--ion-background-color);
+  color: var(--ion-text-color);
+}
+
+.dark {
+  ion-content {
+    --background: #121212; // Fondo oscuro para el contenido
+  }
+
+  .chat-item {
+    --background: #333; // Fondo oscuro para los elementos del chat
+  }
+
+  .text-box-item {
+    --background: #444; // Fondo oscuro para el área de texto
+  }
+
+  // Añade más estilos específicos para el modo oscuro aquí...
+}
