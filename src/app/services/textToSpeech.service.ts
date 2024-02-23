@@ -12,11 +12,12 @@ export class TextToSpeechService {
     try {
       await TextToSpeech.speak({
         text: text,
-        lang: 'es-ES', // Configuración estándar en español
+        lang: 'es-ES',
+        //lang: 'default', // Configuración estándar en español
         rate: 1.0, // Velocidad de la voz
-        pitch: 0.1, // Tono de la voz
+        pitch: 1.0, // Tono de la voz
         volume: 1.0, // Volumen
-        voice: 2.0,
+        //voice: 2.0,
       });
     } catch (e) {
       console.error("Error al usar TTS:", e);
