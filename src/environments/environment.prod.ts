@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  baseUrl: 'http://localhost:3000',
+  baseUrl: 'https://release-chatcompanion-1.onrender.com',
+ // baseUrl: 'http://localhost:3000',
 };
