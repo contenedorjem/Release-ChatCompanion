@@ -13,10 +13,12 @@ import { firebaseConfig } from '../environments/firebase-config';
 import { HttpClientModule } from '@angular/common/http';
 import { VoiceRecognitionModalComponent } from './components/voice-recognition-modal/voice-recognition-modal.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MoodSelectorComponent } from './components/mood-selector/mood-selector.component';
 @NgModule({
   declarations: [
     AppComponent,
     VoiceRecognitionModalComponent,
+    MoodSelectorComponent,
    
   ],
   imports: [

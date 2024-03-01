@@ -1,0 +1,15 @@
+.text-link {
+    cursor: pointer;
+    display: inline-block;
+    margin: 10px 0;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
+  .success-text { color: #28a745; }
+  .primary-text { color: #007bff; }
+  .danger-text { color: #dc3545; }
+  .warning-text { color: #ffc107; }
+  .medium-text { color: #17a2b8; }
+  

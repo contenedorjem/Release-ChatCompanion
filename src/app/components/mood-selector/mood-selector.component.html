@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>¿Cómo te encuentras hoy?</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" class="ion-text-center" *ngFor="let mood of moods">
+        <h4 class="text-link" [ngClass]="mood.class" (click)="selectMood(mood.value)">
+          {{ mood.label }}
+        </h4>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
