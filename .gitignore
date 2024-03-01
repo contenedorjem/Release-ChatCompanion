@@ -6,3 +6,5 @@ android
 ios
 www
 
+
+resources/android/**/*

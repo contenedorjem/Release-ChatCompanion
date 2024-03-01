@@ -1,0 +1,20 @@
+<!-- historial-modal.component.html -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Historial de Conversaciones</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let mensaje of historial">
+      <ion-label>
+        <h2>{{ mensaje.sender === 'me' ? 'Yo' : 'GURB' }}</h2>
+        <p>{{ mensaje.content }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

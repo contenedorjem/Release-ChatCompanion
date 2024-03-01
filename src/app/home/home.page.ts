@@ -8,7 +8,7 @@ import { AuthService } from '../services/auth.service';
 import { TextToSpeechService } from '../services/textToSpeech.service';
 import { VoiceRecognitionModalComponent } from 'src/app/components/voice-recognition-modal/voice-recognition-modal.component';
 import { MoodSelectorComponent } from '../components/mood-selector/mood-selector.component';
-
+import { HistorialModalComponent } from '../components/historial-modal-component/historial-modal-component.component';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -97,9 +97,8 @@ export class HomePage implements OnInit {
       next: (res: any) => {
         this.addMessage('bot', res.bot);
         this.loading = false;
-        this.form.enable(); // Asegúrate de volver a habilitar el formulario aquí
+        this.form.enable();
   
-        // Mover la llamada al servicio de TTS aquí, después de añadir la respuesta del bot
         this.ttsService.speak(res.bot).then(() => {
           console.log("Reproducción de TTS completada");
         }).catch((error) => {
@@ -109,15 +108,17 @@ export class HomePage implements OnInit {
       error: (error: any) => {
         console.error(error);
         this.loading = false;
-        this.form.enable(); // Y también aquí
+        this.form.enable();
       },
     });
+    this.saveConversation();
   }
   
 
   addMessage(sender: string, content: string) {
     this.messages.push({ sender, content });
     this.scrollToBottom();
+    this.saveConversation();
   }
 
   scrollToBottom() {
@@ -164,7 +165,15 @@ export class HomePage implements OnInit {
       this.submit(`Hoy me encuentro ${data.selectedMood}`); // Llama a submit directamente
     }
   }
-  verHistoria() {
-    // Implementa la navegación a la página de perfil del usuario
+
+  saveConversation() {
+    localStorage.setItem('conversation', JSON.stringify(this.messages));
+  }
+  async verHistoria() {
+    const modal = await this.modalController.create({
+      component: HistorialModalComponent,
+      componentProps: { historial: JSON.parse(localStorage.getItem('conversation') || '[]') }
+    });
+    await modal.present();
   }
 }

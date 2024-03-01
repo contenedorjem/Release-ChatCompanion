@@ -14,11 +14,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { VoiceRecognitionModalComponent } from './components/voice-recognition-modal/voice-recognition-modal.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MoodSelectorComponent } from './components/mood-selector/mood-selector.component';
+import { IonicStorageModule } from '@ionic/storage-angular';
+import { HistorialModalComponent } from './components/historial-modal-component/historial-modal-component.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     VoiceRecognitionModalComponent,
     MoodSelectorComponent,
+    HistorialModalComponent,
    
   ],
   imports: [
@@ -27,7 +31,8 @@ import { MoodSelectorComponent } from './components/mood-selector/mood-selector.
     AppRoutingModule,
     HttpClientModule,
     provideFirebaseApp(() => initializeApp(firebaseConfig)),
-    provideAuth(() => getAuth())
+    provideAuth(() => getAuth()),
+    IonicStorageModule.forRoot(),
   ],
   providers: [
     {

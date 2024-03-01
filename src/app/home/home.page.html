@@ -1,21 +1,21 @@
 <!-- HEADER (BOTONES DE ESTADO {NO IMPLEMENTADO}, PERFIL {NO IMPLEMENTADO}, LOGOUT)-->
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
+    <ion-title color="success">
       Asistente - Gurb
     </ion-title>
     <ion-buttons slot="end">
       <!-- Botón de Estado -->
       <ion-button (click)="mostrarSelectorEstado()">
-        <ion-icon slot="icon-only" name="bulb-outline"></ion-icon>
+        <ion-icon color="success" slot="icon-only" name="happy-outline"></ion-icon>
       </ion-button>
-      <!-- Botón de Ver Perfil -->
+      <!-- Botón de Historia -->
       <ion-button (click)="verHistoria()">
-        <ion-icon slot="icon-only" name="person-circle-outline"></ion-icon>
+        <ion-icon color="success" slot="icon-only" name="hourglass-outline"></ion-icon>
       </ion-button>
       <!-- Botón de Logout -->
       <ion-button (click)="logout()">
-        <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
+        <ion-icon color="success" slot="icon-only" name="log-out-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -42,7 +42,7 @@
       <ion-button class="mic-button" (click)="presentVoiceRecognitionModal()">
         <ion-icon color="success" name="mic"></ion-icon>
       </ion-button>
-      <ion-textarea formControlName="promt" auto-grow="true" placeholder="Escribe aquí...">
+      <ion-textarea color="success" formControlName="promt" auto-grow="true" placeholder="Escribe aquí...">
         <ion-buttons slot="end">
           <ion-button (click)="submit()">
             <ion-icon color="success" name="send"></ion-icon>

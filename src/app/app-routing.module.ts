@@ -19,7 +19,7 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('../app/home/home.module').then(m => m.HomePageModule),
-    canActivate: [AuthGuard] // Si quieres proteger esta ruta
+    canActivate: [AuthGuard]
   },
   {
     path: 'password-reset',
