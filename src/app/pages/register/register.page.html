@@ -1,41 +1,53 @@
+<!-- Cabecera de la página con un estilo translúcido -->
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <!-- Título de la página, con el texto centrado y un color secundario -->
     <ion-text color="secondary">
       <h5 style="text-align: center; font-size: small;">REGISTRO DE USUARIO</h5>
     </ion-text>
   </ion-toolbar>
 </ion-header>
 
+<!-- Contenido principal de la página -->
 <ion-content>
+  <!-- Contenedor para el logo, centrado en la página -->
   <div class="logo-container">
     <div class="logo">
+      <!-- Imagen del logo, almacenada en los assets del proyecto -->
       <img src="assets/alien.svg" class="logo"/>
     </div>
   </div>
-
+  <!-- Contenedor para el formulario de registro -->
   <div class="login-container">
     <ion-list>
+      <!-- Campo de entrada para el correo electrónico -->
       <ion-item>
         <ion-label position="floating">Correo electrónico</ion-label>
         <ion-input [(ngModel)]="email" type="email" required></ion-input>
       </ion-item>
+      <!-- Campo de entrada para la contraseña -->
       <ion-item>
         <ion-label position="floating">Contraseña</ion-label>
         <ion-input [(ngModel)]="password" type="password" required></ion-input>
       </ion-item>
+      <!-- Campo de entrada para confirmar la contraseña -->
       <ion-item>
         <ion-label position="floating">Confirmar contraseña</ion-label>
         <ion-input [(ngModel)]="confirmPassword" type="password" required></ion-input>
       </ion-item>
     </ion-list>
+    <!-- Botón para enviar el formulario de registro -->
     <ion-button color="secondary" expand="block" (click)="register()">Dar de alta</ion-button>
   </div>
 </ion-content>
 
+<!-- Pie de página con enlaces adicionales para la navegación -->
 <ion-footer>
   <ion-toolbar>
     <div class="footer-buttons">
+      <!-- Botón para navegar a la página de inicio de sesión -->
       <ion-button color="success" expand="block" fill="clear" routerLink="/login">Iniciar sesión</ion-button>
+      <!-- Botón para navegar a la página de recuperación de contraseña -->
       <ion-button color="warning" expand="block" fill="clear" routerLink="/password-reset">¿Olvidaste tu contraseña?</ion-button>
     </div>
   </ion-toolbar>

@@ -1,10 +1,9 @@
-/* En tu archivo de estilos CSS/SCSS */
 .voice-recognition-ui {
   position: fixed;
-  bottom: 15%; /* Ajusta según sea necesario */
+  bottom: 15%;
   left: 50%;
   transform: translateX(-50%);
-  width: 80%; /* O el ancho que prefieras */
+  width: 80%;
   padding: 20px;
   background: rgba(0, 0, 0, 0.1);
   border-radius: 10px;
@@ -12,55 +11,52 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 100; /* Asegúrate de que sea más alto que el contenido de la página */
+  z-index: 100;
 }
-
 .transcript-area {
   margin: 10px 0;
   padding: 10px;
   border-radius: 5px;
   width: 100%;
 }
-
-.loader{
+.loader {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   width: 200px;
   height: 200px;
   box-sizing: border-box;
 }
-.loader .face{
+.loader .face {
   position: absolute;
-  border:2px solid #121212;
+  border: 2px solid #121212;
 }
-.loader .face.face1{
+.loader .face.face1 {
   top: 0;
-  left:0;
+  left: 0;
   right: 0;
   bottom: 0;
-  background:rgba(0, 0, 0, 0.1);
-  box-shadow:0 0 10px rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   border-left: 2px solid #ffff00;
   border-top: 2px solid #ffff00;
   animation: ani1 3s linear infinite;
 }
-.loader .face.face2{
+.loader .face.face2 {
   top: 30px;
-  left:30px;
+  left: 30px;
   right: 30px;
   bottom: 30px;
-  background:rgba(0, 0, 0, 0.1);
-  box-shadow:0 0 10px rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   border-right: 2px solid #03a9f4;
   border-bottom: 2px solid #03a9f4;
   animation: ani2 3s linear infinite;
-
 }
-.loader .face .circle{
+.loader .face .circle {
   position: absolute;
   top: calc(50% - 1px);
   left: 50%;
@@ -68,13 +64,13 @@
   height: 2px;
   transform-origin: left;
 }
-.loader .face.face1 .circle{
+.loader .face.face1 .circle {
   transform: rotate(-45deg);
 }
-.loader .face.face2 .circle{
+.loader .face.face2 .circle {
   transform: rotate(-45deg);
 }
-.loader .face .circle:before{
+.loader .face .circle:before {
   content: "";
   position: absolute;
   width: 10px;
@@ -84,44 +80,37 @@
   top: -4px;
   right: -6px;
 }
-.loader .face.face1 .circle:before{
-  background:#ffff00;
-  box-shadow: 0 0 20px #ff0,0 0 40px #ff0,0 0 60px #ff0,0 0 80px #ff0,
-  0 0 100px #ff0,0 0 0 5px rgba(255,255,0,.1);
+.loader .face.face1 .circle:before {
+  background: #ffff00;
+  box-shadow: 0 0 20px #ff0, 0 0 40px #ff0, 0 0 60px #ff0, 0 0 80px #ff0,
+    0 0 100px #ff0, 0 0 0 5px rgba(255, 255, 0, 0.1);
 }
-.loader .face.face2 .circle:before{
-  background:#03a9f4;
-  box-shadow: 0 0 20px #03a9f4,0 0 40px #03a9f4,0 0 60px #03a9f4,0 0 80px #03a9f4,
-  0 0 100px #03a9f4,0 0 0 5px rgba(3,169,244,0.1);
+.loader .face.face2 .circle:before {
+  background: #03a9f4;
+  box-shadow: 0 0 20px #03a9f4, 0 0 40px #03a9f4, 0 0 60px #03a9f4,
+    0 0 80px #03a9f4, 0 0 100px #03a9f4, 0 0 0 5px rgba(3, 169, 244, 0.1);
 }
-@keyframes ani1{
-  0%{
-    transform:rotate(0deg);
+@keyframes ani1 {
+  0% {
+    transform: rotate(0deg);
   }
-  100%{
-    transform:rotate(360deg);
-  }
-}
-@keyframes ani2{
-  0%{
-    transform:rotate(0deg);
-  }
-  100%{
-    transform:rotate(-360deg);
+  100% {
+    transform: rotate(360deg);
   }
 }
-
-
-
-
-
-
-
+@keyframes ani2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
 .logo {
   margin-left: auto;
   margin-right: auto;
   margin-top: 20%;
-  width: 20%; /* Ancho del círculo */
-  height: 20%; /* Altura del círculo */
+  width: 20%;
+  height: 20%;
   z-index: 9999;
 }

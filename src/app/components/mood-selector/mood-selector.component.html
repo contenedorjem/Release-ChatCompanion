@@ -1,15 +1,25 @@
+<!-- Cabecera de la página que incluye la barra de herramientas y el título -->
 <ion-header>
   <ion-toolbar>
+    <!-- Título visible en la barra de herramientas, pregunta al usuario sobre su estado de ánimo -->
     <ion-title>¿Cómo te encuentras hoy?</ion-title>
   </ion-toolbar>
 </ion-header>
 
+<!-- Contenido principal de la página -->
 <ion-content>
+  <!-- Grid de Ionic para organizar los elementos en una cuadrícula -->
   <ion-grid>
+    <!-- Fila dentro de la cuadrícula -->
     <ion-row>
+      <!-- Columna que se repite para cada "mood" en el array "moods" -->
+      <!-- 'size="12"' indica que la columna ocupa el 100% del ancho disponible -->
+      <!-- 'class="ion-text-center"' centra el texto dentro de la columna -->
       <ion-col size="12" class="ion-text-center" *ngFor="let mood of moods">
+        <!-- Título para cada estado de ánimo, con un clic que llama a la función 'selectMood' -->
+        <!-- '[ngClass]="mood.class"' aplica clases dinámicamente basadas en la propiedad 'class' del objeto 'mood' -->
         <h4 class="text-link" [ngClass]="mood.class" (click)="selectMood(mood.value)">
-          {{ mood.label }}
+          {{ mood.label }} <!-- Muestra la etiqueta del estado de ánimo -->
         </h4>
       </ion-col>
     </ion-row>

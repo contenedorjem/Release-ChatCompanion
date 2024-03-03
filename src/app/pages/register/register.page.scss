@@ -3,7 +3,6 @@ ion-content {
   flex-direction: column;
   height: 100%;
 }
-
 .logo-container {
   margin-top: 50px;
   flex: 1;
@@ -11,21 +10,18 @@ ion-content {
   justify-content: center;
   align-items: center;
 }
-
 .logo {
   background-color: var(--ion-color-secondary);
   border-radius: 50%;
   width: 200px;
   height: 200px;
 }
-
 .login-container {
   width: 95%;
   margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
 }
-
 .footer-buttons {
   flex: 0;
   display: flex;

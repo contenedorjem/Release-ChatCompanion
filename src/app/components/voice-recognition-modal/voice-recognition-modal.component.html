@@ -1,14 +1,16 @@
+<!-- Fondo semitransparente que puede ser utilizado para enfocar la atención en un elemento sobre el resto de la UI -->
 <ion-backdrop visible="true" tappable="false"></ion-backdrop>
 
-<!-- Animación de fondo para reconocimiento de voz -->
+<!-- Estructura de la animación de carga, posiblemente para indicar que el reconocimiento de voz está activo -->
 <div class="loader">
   <div class="face face1">
-    <div class="circle"></div>
+    <div class="circle"></div> <!-- Círculo animado dentro de la "cara" de la animación -->
   </div>
   <div class="face face2">
-    <div class="circle"></div>
+    <div class="circle"></div> <!-- Otro círculo animado dentro de otra "cara" -->
   </div>
 </div>
+<!-- Repetición de la estructura de la animación para potenciar el efecto visual -->
 <div class="loader">
   <div class="face face1">
       <div class="circle"></div>
@@ -17,28 +19,26 @@
       <div class="circle"></div>
   </div>
 </div>
+<!-- Logo de la aplicación, que se muestra en la interfaz -->
 <img src="assets/alienY.svg" class="logo" />
 
-<!-- Interfaz del reconocimiento de voz -->
+<!-- Contenedor principal de la interfaz de usuario del reconocimiento de voz -->
 <div class="voice-recognition-ui">
-  <!-- Botón para iniciar la escucha -->
+  <!-- Botón para iniciar el proceso de escucha del reconocimiento de voz -->
   <ion-button (click)="startListening()" color="warning" *ngIf="!isListening">
-    <ion-icon name="mic-outline" slot="start"></ion-icon>
+    <ion-icon name="mic-outline" slot="start"></ion-icon> <!-- Icono del micrófono -->
     Iniciar Escucha
   </ion-button>
-
-  <!-- Botón para detener la escucha -->
+  <!-- Botón para detener el proceso de escucha, visible solo cuando el sistema está escuchando -->
   <ion-button (click)="stopListening()" color="warning" *ngIf="isListening">
-    <ion-icon name="mic-off-outline" slot="start"></ion-icon>
+    <ion-icon name="mic-off-outline" slot="start"></ion-icon> <!-- Icono del micrófono apagado -->
     Detener Escucha
   </ion-button>
-
-  <!-- Texto reconocido mostrado aquí -->
+  <!-- Área donde se muestra el texto reconocido por el sistema de voz -->
   <div class="transcript-area">
-    <p color ="warning">{{ transcript}}</p>
+    <p>{{ transcript }}</p> <!-- El texto reconocido se vincula dinámicamente aquí -->
   </div>
-
-  <!-- Botón para enviar el texto reconocido, siempre visible -->
+  <!-- Botón para enviar el texto reconocido -->
   <ion-button (click)="sendTranscript()" color="warning">
     Enviar
   </ion-button>

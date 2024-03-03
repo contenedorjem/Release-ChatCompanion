@@ -1,19 +1,19 @@
-<!-- HEADER (BOTONES DE ESTADO {NO IMPLEMENTADO}, PERFIL {NO IMPLEMENTADO}, LOGOUT)-->
+<!-- CABECERA con botones para diferentes funcionalidades como estado del usuario, historial y logout -->
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title color="success">
       Asistente - Gurb
     </ion-title>
     <ion-buttons slot="end">
-      <!-- Botón de Estado -->
+      <!-- Botón para mostrar selector de estado -->
       <ion-button (click)="mostrarSelectorEstado()">
         <ion-icon color="success" slot="icon-only" name="happy-outline"></ion-icon>
       </ion-button>
-      <!-- Botón de Historia -->
+      <!-- Botón para ver el historial de conversaciones -->
       <ion-button (click)="verHistoria()">
         <ion-icon color="success" slot="icon-only" name="hourglass-outline"></ion-icon>
       </ion-button>
-      <!-- Botón de Logout -->
+      <!-- Botón para cerrar sesión -->
       <ion-button (click)="logout()">
         <ion-icon color="success" slot="icon-only" name="log-out-outline"></ion-icon>
       </ion-button>
@@ -21,13 +21,16 @@
   </ion-toolbar>
 </ion-header>
 
-<!-- CONTENT (MENSAJES ENTRE BOT Y ME)-->
+<!-- CONTENIDO principal donde se muestran los mensajes intercambiados entre el bot y el usuario -->
 <ion-content [scrollEvents]="true">
+  <!-- Lista de mensajes, alternando el estilo según el emisor del mensaje -->
   <ion-item lines="none" [ngClass]="{'bot' : m.sender !== 'me'}" class="chat-item"
     *ngFor="let m of messages; index as i">
+    <!-- Insignia para identificar visualmente el emisor del mensaje -->
     <ion-badge slot="start" [color]="m.sender === 'me' ? 'secondary' : 'success'" mode="ios">
       <ion-icon class="chat-icon" [src]="m.sender === 'me' ? 'assets/user.svg' : 'assets/alien.svg'"></ion-icon>
     </ion-badge>
+    <!-- Contenido del mensaje y spinner de carga para el último mensaje si está cargando -->
     <ion-label class="ion-text-wrap">
       {{m.content}}
       <ion-spinner *ngIf="loading && (i+1===messages.length)" color="success" name="lines-sharp-small"></ion-spinner>
@@ -35,23 +38,23 @@
   </ion-item>
 </ion-content>
 
-<!-- FOOTER (INTERFAZ DE TEXTO, APERTURA DEL MODAL Y SEND BUTTON)-->
+<!-- PIE DE PÁGINA con una interfaz para enviar mensajes nuevos -->
 <ion-footer class="ion-padding">
   <form [formGroup]="form" (ngSubmit)="submit()" (keyup.enter)="submit()">
     <ion-item class="text-box-item">
-      <!-- APERTURA DEL MODAL DE RECONOCIMIENTO DE VOZ -->
+      <!-- Botón para abrir modal de reconocimiento de voz -->
       <ion-button class="mic-button" (click)="presentVoiceRecognitionModal()">
         <ion-icon color="success" name="mic"></ion-icon>
       </ion-button>
-      <!-- INTERFAZ DE TEXTO -->
+      <!-- Área de texto para escribir el mensaje nuevo -->
       <ion-textarea color="success" formControlName="promt" auto-grow="true" placeholder="Escribe aquí...">
-      <!-- BOTÓN SEND -->
-        <ion-buttons slot="end">
-          <ion-button (click)="submit()">
-            <ion-icon color="success" name="send"></ion-icon>
-          </ion-button>
-        </ion-buttons>
       </ion-textarea>
+      <!-- Botón para enviar el mensaje -->
+      <ion-buttons slot="end">
+        <ion-button (click)="submit()">
+          <ion-icon color="success" name="send"></ion-icon>
+        </ion-button>
+      </ion-buttons>
     </ion-item>
   </form>
 </ion-footer>

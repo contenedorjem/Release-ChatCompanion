@@ -1,17 +1,26 @@
+<!-- Cabezera de la página, incluye la barra de herramientas y el título de la página -->
 <ion-header>
   <ion-toolbar>
+    <!-- Título de la página visible en la barra de herramientas -->
     <ion-title>Historial de Conversaciones</ion-title>
+    <!-- Botones situados a la derecha de la barra de herramientas -->
     <ion-buttons slot="end">
+      <!-- Botón para cerrar la vista actual o el modal -->
       <ion-button (click)="dismiss()">Cerrar</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
+<!-- Contenido principal de la página -->
 <ion-content>
+  <!-- Lista de elementos, cada uno representando un mensaje del historial -->
   <ion-list>
+    <!-- Itera sobre el array 'historial', creando un ion-item por cada mensaje -->
     <ion-item *ngFor="let mensaje of historial">
       <ion-label>
+        <!-- Muestra 'Yo' si el remitente del mensaje es 'me', de lo contrario muestra 'GURB' -->
         <h2>{{ mensaje.sender === 'me' ? 'Yo' : 'GURB' }}</h2>
+        <!-- Muestra el contenido del mensaje -->
         <p>{{ mensaje.content }}</p>
       </ion-label>
     </ion-item>
