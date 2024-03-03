@@ -21,7 +21,7 @@ export class AuthService {
     return signInWithEmailAndPassword(this.auth, email, password);
   }
 
-  // Iniciar sesión con huella dactilar
+  // Iniciar sesión con huella dactilar (NO IMPLEMENTADO)
   biometricLogin(): Promise<void> {
     const { BiometricAuth } = Plugins;
     return BiometricAuth['biometricAuthenticate']().then((result: any) => {

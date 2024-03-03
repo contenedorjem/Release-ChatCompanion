@@ -29,7 +29,7 @@ ion-badge{
 }
 
 .mic-button {
-  margin-right: 8px; /* Ajusta según sea necesario */
+  margin-right: 8px;
 }
 
 .text-box-item {
@@ -37,7 +37,7 @@ ion-badge{
 }
 
 .send-button {
-  margin-left: 8px; /* Ajusta según sea necesario */
+  margin-left: 8px;
 }
 
 .swal2-container {
@@ -51,16 +51,14 @@ ion-badge{
 
 .dark {
   ion-content {
-    --background: #121212; // Fondo oscuro para el contenido
+    --background: #121212;
   }
 
   .chat-item {
-    --background: #333; // Fondo oscuro para los elementos del chat
+    --background: #333;
   }
 
   .text-box-item {
-    --background: #444; // Fondo oscuro para el área de texto
+    --background: #444;
   }
-
-  // Añade más estilos específicos para el modo oscuro aquí...
 }

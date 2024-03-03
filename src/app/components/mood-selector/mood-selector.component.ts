@@ -15,7 +15,7 @@ export class MoodSelectorComponent {
     { label: 'ENFADADO', value: 'enfadado', class: 'danger-text' },
     { label: 'ESTRESADO', value: 'estresado', class: 'warning-text' },
     { label: 'ASUSTADO', value: 'asustado', class: 'medium-text' },
-    { label: 'NEUTRO', value: 'normal', class: '' } // No specific class for neutral
+    { label: 'NEUTRO', value: 'normal', class: '' }
   ];
   constructor(private modalCtrl: ModalController) {}
 

@@ -1,5 +1,6 @@
-<!-- En tu archivo de plantilla HTML -->
 <ion-backdrop visible="true" tappable="false"></ion-backdrop>
+
+<!-- Animación de fondo para reconocimiento de voz -->
 <div class="loader">
   <div class="face face1">
     <div class="circle"></div>
@@ -18,6 +19,7 @@
 </div>
 <img src="assets/alienY.svg" class="logo" />
 
+<!-- Interfaz del reconocimiento de voz -->
 <div class="voice-recognition-ui">
   <!-- Botón para iniciar la escucha -->
   <ion-button (click)="startListening()" color="warning" *ngIf="!isListening">

@@ -15,7 +15,7 @@ export class VoiceRecognitionService {
   async requestPermission(): Promise<void> {
     try {
       await SpeechRecognition['requestPermission']();
-    } catch (e: any) { // Tipo explícito any para el parámetro e
+    } catch (e: any) {
       console.error('Error requesting speech recognition permission:', e);
     }
   }
@@ -26,11 +26,11 @@ export class VoiceRecognitionService {
       language: 'es-ES',
       maxResults: 1,
       prompt: 'Habla ahora...',
-      partialResults: false // Cambiado a false para obtener solo resultados finales
-    }).then((result: any) => { // Tipo explícito any para el parámetro result
+      partialResults: false
+    }).then((result: any) => {
       this.isListening = false;
       callback(result.matches[0]);
-    }).catch((e: any) => { // Tipo explícito any para el parámetro e
+    }).catch((e: any) => {
       this.isListening = false;
       console.error('Error during speech recognition:', e);
     });

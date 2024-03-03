@@ -13,11 +13,9 @@ export class TextToSpeechService {
       await TextToSpeech.speak({
         text: text,
         lang: 'es-ES',
-        //lang: 'default', // Configuración estándar en español
-        rate: 1.0, // Velocidad de la voz
-        pitch: 1.0, // Tono de la voz
-        volume: 1.0, // Volumen
-        //voice: 2.0,
+        rate: 1.0,
+        pitch: 1.0,
+        volume: 1.0,
       });
     } catch (e) {
       console.error("Error al usar TTS:", e);

@@ -42,16 +42,12 @@ export class PasswordResetPage {
             this.authService
               .resetPassword(data.email)
               .then(() => {
-                // Notificación de éxito
                 console.log(
                   'Solicitud de restablecimiento enviada. Verifica tu correo electrónico.'
                 );
-                // Aquí podrías implementar una notificación al usuario, por ejemplo, usando un Toast de Ionic.
               })
               .catch((error) => {
-                // Manejo de errores
                 console.error(error);
-                // Aquí podrías mostrar un mensaje de error al usuario, por ejemplo, usando un Alert de Ionic.
               });
           },
         },

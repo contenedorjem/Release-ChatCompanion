@@ -24,7 +24,6 @@ export class LoginPage {
     }).catch(async (error) => {
       console.error(error);
   
-      // Crear y mostrar la alerta de error
       const alert = await this.alertController.create({
         header: 'Error al iniciar sesión',
         message: 'Hubo un problema al iniciar sesión. Por favor, intenta de nuevo.',
@@ -40,7 +39,6 @@ export class LoginPage {
       this.router.navigateByUrl('/home');
     }).catch(err => {
       console.error(err);
-      // Manejar errores, como mostrar un mensaje al usuario
     });
   }
 }

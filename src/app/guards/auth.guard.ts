@@ -13,7 +13,7 @@ export class AuthGuard implements CanActivate {
   canActivate(): Observable<boolean> | Promise<boolean> | boolean {
     return this.authService.getUserState().pipe(
       take(1),
-      map(user => !!user), // Convertir el objeto user a un booleano
+      map(user => !!user),
       tap(loggedIn => {
         if (!loggedIn) {
           console.log('access denied');

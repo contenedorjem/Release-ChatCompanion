@@ -42,7 +42,7 @@ export class VoiceRecognitionModalComponent implements OnDestroy {
 
 
 
-
+/*GUARDAMOS ESTE CODIGO EN CASO DE NECESITAR DEL WEB SPEECH QUE ES UN RECONOCIMIENTO DE VOZ PARA NAVEGADOR*/
 // import { Component, OnDestroy } from '@angular/core';
 // import { ModalController } from '@ionic/angular';
 // import { WebSpeechService } from 'src/app/services/webSpeech.service';

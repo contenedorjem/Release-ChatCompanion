@@ -37,12 +37,9 @@ export class RegisterPage {
               text: 'Registrar',
               handler: () => {
                 this.authService.register(this.email, this.password).then(() => {
-                  // Navegar a la página principal o mostrar éxito
                   this.router.navigateByUrl('/home');
                 }).catch(error => {
-                  // Manejar errores de registro
                   console.error(error);
-                  // Aquí podrías mostrar un mensaje de error al usuario, por ejemplo, usando un Alert de Ionic.
                 });
               }
             }
@@ -51,9 +48,7 @@ export class RegisterPage {
     
         await alert.present();
       } else {
-        // Mostrar un mensaje de error indicando que las contraseñas no coinciden
         console.error('Las contraseñas no coinciden');
-        // Aquí podrías mostrar un mensaje de error al usuario, por ejemplo, usando un Toast de Ionic.
       }
     }
     

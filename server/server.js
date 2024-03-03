@@ -16,13 +16,12 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', async (req, res) => {
-    res.status(200).send({ message: "Hello World" });
+    res.status(200).send({ message: "Servidor GURB activo y funcionando" });
 });
 
 app.post('/', async (req, res) => {
     try {
-        // Asumiendo que el cuerpo de la petición tiene una propiedad llamada 'promt'
-        const { promt: prompt } = req.body; // Renombrar la propiedad 'promt' a 'prompt'
+        const { promt: prompt } = req.body;
           const response = await openai.createChatCompletion({
             model: "gpt-3.5-turbo",
             messages: [{
